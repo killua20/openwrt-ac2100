@@ -22,3 +22,4 @@ git clone https://github.com/jerrykuku/lua-maxminddb.git
 git clone https://github.com/jerrykuku/luci-app-vssr.git
 cp -r /workdir/openwrt/lua-maxminddb /workdir/openwrt/package/lean/
 cp -r /workdir/openwrt/luci-app-vssr /workdir/openwrt/package/lean/
+echo 'CONFIG_PACKAGE_luci-app-vssr=y' >> .config
