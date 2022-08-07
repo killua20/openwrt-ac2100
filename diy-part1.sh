@@ -14,14 +14,10 @@
 #sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
 # Add a feed source
-set FORCE_UNSAFE_CONFIGURE=1
 echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 git clone https://github.com/jerrykuku/lua-maxminddb.git
 git clone https://github.com/jerrykuku/luci-app-vssr.git
 cp -r /workdir/openwrt/lua-maxminddb /workdir/openwrt/package/lean/
 cp -r /workdir/openwrt/luci-app-vssr /workdir/openwrt/package/lean/
-echo "CONFIG_PACKAGE_luci-app-vssr=y" >> .config
 make defconfig
-make tools/install
-make toolchain/install
