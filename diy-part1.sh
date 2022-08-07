@@ -25,4 +25,3 @@ echo "CONFIG_PACKAGE_luci-app-vssr=y" >> .config
 make defconfig
 make tools/install
 make toolchain/install
-make package/openwisp-monitoring/compile
