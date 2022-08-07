@@ -17,14 +17,10 @@
 set FORCE_UNSAFE_CONFIGURE=1
 echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-echo "src-git openwisp_config https://github.com/openwisp/openwisp-config.git^1.0.0" >>feeds.conf.default
-echo "src-git openwisp_monitoring https://github.com/openwisp/openwrt-openwisp-monitoring.git" >>feeds.conf.default
 git clone https://github.com/jerrykuku/lua-maxminddb.git
 git clone https://github.com/jerrykuku/luci-app-vssr.git
 cp -r /workdir/openwrt/lua-maxminddb /workdir/openwrt/package/lean/
 cp -r /workdir/openwrt/luci-app-vssr /workdir/openwrt/package/lean/
-echo "CONFIG_PACKAGE_netjson-monitoring=y" >> .config
-echo "CONFIG_PACKAGE_openwisp-monitoring=y" >> .config
 echo "CONFIG_PACKAGE_luci-app-vssr=y" >> .config
 make defconfig
 make tools/install
